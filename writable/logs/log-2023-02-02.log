@@ -1,0 +1,11 @@
+CRITICAL - 2023-02-02 01:27:21 --> Undefined array key "action"
+in APPPATH\Views\receiptsList.php on line 21.
+ 1 APPPATH\Views\receiptsList.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "action"', 'APPPATH\\Views\\receiptsList.php', 21)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\receiptsList.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('receiptsList', [], true)
+ 5 APPPATH\Controllers\FeesData.php(61): view('receiptsList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->listReceipts()
+ 7 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

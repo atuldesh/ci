@@ -7,3 +7,6 @@ label {padding-left :1ch;
 button {
     margin-right: 1ch;
 }
+input {
+    font-size: 120%;
+}

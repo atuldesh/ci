@@ -7,7 +7,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\Users;
 use App\Models\CourseModel;
-
+use App\Models\StudentModel;
 class Instt extends BaseController
 {
     protected $helpers = ['url', 'form'];                
@@ -43,10 +43,24 @@ class Instt extends BaseController
         if($pflag==0 || $user['role']=='G'){
             $pages['main'] =  view('sshow');
         }else if($pflag==1 && ($user['role'] == 'A' || $user['role']=='F')){
-            $st = json_encode($this->getCourseList());
-            $data['courseList'] = $st;
+            $st = $this->getCourseList();
+            $data['courseList'] = json_encode($st);
             $pages['main'] = view('studEntry',$data);
+        }else if($pflag==2 && ($user['role'] == 'A' || $user['role']=='F')){
+            $st = $this->getStudentsList();
+            $data['studentsList'] = json_encode($st);
+            $pages['main'] = view('feesEntry',$data);
+        }else if($pflag==3 && ($user['role'] == 'A' || $user['role']=='F')){
+            $st = $this->getStudentsList();
+            $data['studentsList'] = json_encode($st);
+            $data['repoNo'] = $pflag - 2;
+            $pages['main'] = view('feesReports',$data);
+        }else if($pflag>3 && ($user['role'] == 'A')){
+            $data['repoNo'] = $pflag - 2;
+            $pages['main'] = view('feesReports',$data);
         }
+        
+
         $pages['loginForm'] = view('loginForm');
         
         if(isset($_SESSION['role'])){
@@ -77,7 +91,14 @@ class Instt extends BaseController
     public function getCourseList()
     {
         $model = new CourseModel();
-        return  json_encode($model->findAll());
+        return json_encode($model->findAll());
+       // print_r("A::".$t1);
+     //   return t1;
+    }
+    public function getStudentsList()
+    {
+        $model = new studentModel();
+        return json_encode($model->findAll());
     }
 
 }

@@ -1,0 +1,83 @@
+CRITICAL - 2023-02-09 02:48:05 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\FeesData.php on line 75.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(260): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\FeesData.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(238): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\FeesData')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\FeesData')
+ 4 SYSTEMPATH\CodeIgniter.php(875): class_exists('\\App\\Controllers\\FeesData', true)
+ 5 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 03:07:51 --> Undefined variable $main
+in APPPATH\Views\homePage.php on line 19.
+ 1 APPPATH\Views\homePage.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $main', 'APPPATH\\Views\\homePage.php', 19)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\homePage.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('homePage', [], true)
+ 5 APPPATH\Controllers\Instt.php(69): view('homePage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Instt->showPage(4)
+ 7 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instt))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 04:44:27 --> Undefined variable $Model
+in APPPATH\Controllers\FeesData.php on line 76.
+ 1 APPPATH\Controllers\FeesData.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Model', 'APPPATH\\Controllers\\FeesData.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 04:45:22 --> Undefined variable $Model
+in APPPATH\Controllers\FeesData.php on line 76.
+ 1 APPPATH\Controllers\FeesData.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Model', 'APPPATH\\Controllers\\FeesData.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 04:46:29 --> Undefined variable $Model
+in APPPATH\Controllers\FeesData.php on line 76.
+ 1 APPPATH\Controllers\FeesData.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Model', 'APPPATH\\Controllers\\FeesData.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 04:49:46 --> Undefined variable $Model
+in APPPATH\Controllers\FeesData.php on line 76.
+ 1 APPPATH\Controllers\FeesData.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Model', 'APPPATH\\Controllers\\FeesData.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 04:54:17 --> Undefined variable $cond
+in APPPATH\Controllers\FeesData.php on line 78.
+ 1 APPPATH\Controllers\FeesData.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cond', 'APPPATH\\Controllers\\FeesData.php', 78)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 04:55:21 --> Undefined variable $cond
+in APPPATH\Controllers\FeesData.php on line 78.
+ 1 APPPATH\Controllers\FeesData.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cond', 'APPPATH\\Controllers\\FeesData.php', 78)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 04:58:24 --> Undefined variable $cond
+in APPPATH\Controllers\FeesData.php on line 78.
+ 1 APPPATH\Controllers\FeesData.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cond', 'APPPATH\\Controllers\\FeesData.php', 78)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 04:58:46 --> Undefined variable $cond
+in APPPATH\Controllers\FeesData.php on line 79.
+ 1 APPPATH\Controllers\FeesData.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cond', 'APPPATH\\Controllers\\FeesData.php', 79)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-09 05:03:20 --> Undefined variable $cond
+in APPPATH\Controllers\FeesData.php on line 78.
+ 1 APPPATH\Controllers\FeesData.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cond', 'APPPATH\\Controllers\\FeesData.php', 78)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

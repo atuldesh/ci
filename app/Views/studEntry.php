@@ -13,7 +13,7 @@
                 <label for="regno">Reg. No.</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input type="number" name="regno" id="regno" value="0" readonly />
+                <input type="number" class="form-control" name="regno" id="regno" value="0" readonly />
             </div>
         </div>
         <div class="row justify-content-start">
@@ -21,7 +21,7 @@
                 <label for="sname">Name:</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input type="text" name="sname" id="sname" />
+                <input type="text" class="form-control" name="sname" id="sname" />
             </div>
         </div>
         <div class="row justify-content-start">
@@ -29,7 +29,7 @@
                 <label for="course">course</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input list="courses" name="course" id="course" onblur="getCourseFees()">
+                <input list="courses" class="form-control" name="course" id="course" onblur="getCourseFees()">
                 <span id="clist"></span>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <label  for="fees">Fees</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input type="number" name="fees" id="fees">
+                <input type="number" class="form-control" name="fees" id="fees">
             </div>
         </div>
         <div class="row ">
@@ -46,7 +46,7 @@
                 <label for="admDate">Adm. Date</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input type="date" name="admDate" id="admDate" >
+                <input type="date" class="form-control" name="admDate" id="admDate" >
             </div>
         </div>
         <div class="row ">
@@ -54,7 +54,7 @@
                 <label  for="bdate">B. Date</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input type="date" name="bdate" id="bdate">
+                <input type="date" class="form-control" name="bdate" id="bdate">
             </div>
         </div>
         <div class="row">
@@ -62,7 +62,7 @@
                 <label for="addr">Address</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input type="text" name="address" id="addr" />
+                <input type="text" class="form-control" name="address" id="addr" />
             </div>
         </div>
         <div class="row">
@@ -70,7 +70,7 @@
                 <label for="phone">Phone</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input type="phone" name="phone" id="phone" />
+                <input type="phone" class="form-control" name="phone" id="phone" />
             </div>
         </div>   
         <div class="row">
@@ -85,16 +85,6 @@
         </form>
     </div>
     <div class="tab-pane fade " id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab" tabindex="0"> 
-        <div>
-            <table class="table" id="studtbl">
-                <tr>
-                    <th>Reg.No.</th><th>Name</th><th>Course</th><th>Action</th>
-                </tr>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>           
     </div>
 </div>
 </div>
@@ -120,16 +110,60 @@
             }
         });
     }
+    function editStudent(pregno)
+    {
+        let obj = {"regno":pregno};
+        fetch('getStudent',{
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+/*  }).then(function(response) 
+{return response.text().then(function(text) {console.log(text)})}) */
+        }).then(response => response.json())
+        .then(data => { 
+//         console.log(data.regno);return;
+        $('regno').value=data.regno;
+        $('sname').value=data.sname;
+        $('course').value =data.course;
+        $('fees').value = data.fees;$('admDate').value=data.admDate;
+        $('bdate').value=data.bdate;
+        $('addr').value=data.address;$('phone').value = data.phone;  
+        var sel = document.querySelector('#nav-entry-tab');
+        bootstrap.Tab.getOrCreateInstance(sel).show();
+        });
+    }
+    function delStudent(pregno)
+    {
+        let obj = {"regno":pregno};
+        fetch('delStudent',{
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(obj),
+        }).then(function(response) 
+        {return response.text().then(function(text) {
+            console.log(text);
+            if(text=="Deleted") {
+                studList();
+            }
+
+        })})     
+    }        
+    
     function saveStudent()
     {
         form = $("studEntryForm");
         fd= new FormData(form);
-        console.log(fd);
+    //    fd['regno'] = "566";return;
+   //     console.log(fd);
         studObj = {};
         for (let [key, value] of fd) {
             studObj[key] = value;
         }
-        console.log(studObj)
+//        console.log(studObj)
         fetch('saveStudent',{
             method: 'POST', // or 'PUT'
             headers: {
@@ -142,5 +176,18 @@
             form.reset();
         })})
     }        
+    function studList(page=1)
+    {
+        idataObj = {'perPage':5,'page':page};
+        fetch('listStudents',{
+            method:'POST',
+            'Content-Type': 'application/json',
+            body: JSON.stringify(idataObj),
+        })
+        .then(function(response) 
+        {return response.text().then(function(text) {
+            $('nav-list').innerHTML = text;
+        })})
 
+    }
  </script>

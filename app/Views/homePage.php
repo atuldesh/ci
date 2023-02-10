@@ -8,7 +8,7 @@
      />
      <link href="public/assets/css/styles.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="fs-7">
 <div class="container-fluid px-0" >
     <?php echo $header;?>
     <div class="row">
@@ -50,7 +50,7 @@ function chkLogin()
             $('msg').innerText="Invalid Login id or Password";
         } else {
             var myModalEl = document.getElementById('loginModal');
-            var modal = bootstrap.Modal.getInstance(myModalEl)
+            var modal = bootstrap.Modal.getInstance(myModalEl);
             modal.hide();            
             st = "Welcome "+ data['uname'];
             st=st+'<span class="px-2" id="logBtn"><a href="logout" class="btn btn-warning" >LogOut</a></span>';
