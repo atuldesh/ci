@@ -1,12 +1,24 @@
 <?php
-    
-    $pages = ($total%$perPage>0)?intdiv($total,$perPage)+1 : $total/$perPage;
+        $pages = ($total%$perPage>0)?intdiv($total,$perPage)+1 : $total/$perPage;
+   
 ?>
 <div>
-    <table class="table" id="studtbl">
-        <tr>
-            <th>Reg.No.</th><th>Name</th><th>Course</th><th>Action</th>
-        </tr>
+    <table class="table border boder-2" id="studtbl">
+        <thead>
+            <tr class="mb-2" >
+                <th></th>
+                <th>
+                    <input type="text" id="tsname" oninput="studList(1,1)" class="form-control w-70" value ='<?php echo(isset($psname) ? $psname : ""); ?>' placeholder="Search Name">
+                </th>
+                <th>
+                    <input type="text" id="tcourse" oninput="studList(1,2)" class="form-control w-70" placeholder="Search Course" value ='<?php echo(isset($pcourse) ? $pcourse :""); ?>'>
+                </th>
+                 <th></th>
+            </tr>
+            <tr >
+                <th>Reg.No.</th><th>Name</th><th>Course</th><th>Action</th>
+            </tr>
+        </thead>
         <tbody>
         <?php if($students): ?>
           <?php foreach($students as $student): ?>
@@ -31,7 +43,8 @@
 <div id="pgLinks">
     <?php
     for($i=1;$i<=$pages;$i++){
-        echo ("<span class='px-2'><a href='#' onclick='studList(".$i.")'>".$i."</a></span>");
+        echo ("<span class='px-2'><a href='#' onclick='studList(".$i.",1)'>".$i."</a></span>");
     }
+    
     ?>
-</div>        
+</div>

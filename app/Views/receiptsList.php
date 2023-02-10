@@ -4,9 +4,14 @@
 ?>
 <div>
     <table class="table" id="feestbl">
-        <tr>
+        <tr class="bg-secondary text-white">
         <th>Rec.No.</th><th>Reg.No.</th><th>Name</th><th>Date</th>
-        <th>Amount</th><th>Remark</th><th>Action</th>
+        <th>Amount</th><th>Remark</th>
+<?php   if(!(isset($repoNo))) {
+            echo "<th>Action</th>"; } 
+        else {
+            echo "</tr><tr class='bg-info'><th colspan='4'>Sum</th><th>".$totAmt."</th><th></th>";
+        } ?> 
         </tr>
         <tbody>
         <?php if($receipts): ?>
@@ -18,6 +23,7 @@
                 <td><?php echo $receipt['fdate']; ?></td>
                 <td><?php echo $receipt['amount']; ?></td>
                 <td><?php echo $receipt['remark']; ?></td>
+<?php           if(!(isset($repoNo))) { ?>
                 <td>
                     <button class='btn btn-primary'
                      onclick='editReceipt(<?php echo $receipt["recno"]; ?>)'>
@@ -25,7 +31,8 @@
                     <button class='btn btn-warning'
                     onclick='delReceipt(<?php echo $receipt["recno"]; ?>)'>
                     Del</button>
-                </td>
+                </td> 
+<?php           } ?>
             </tr>
           <?php endforeach; ?>
         <?php endif; ?>

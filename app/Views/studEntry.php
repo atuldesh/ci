@@ -176,9 +176,15 @@
             form.reset();
         })})
     }        
-    function studList(page=1)
+    function studList(page=1, searchOpt=0)
     {
-        idataObj = {'perPage':5,'page':page};
+        psname="";
+        pcourse="";
+        if(searchOpt>0){
+            psname = $('tsname').value.trim() ;
+            pcourse = $('tcourse').value.trim() ;
+        }
+        idataObj = {'perPage':5,'page':page,'psname':psname,'pcourse':pcourse};
         fetch('listStudents',{
             method:'POST',
             'Content-Type': 'application/json',

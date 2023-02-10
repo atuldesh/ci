@@ -48,13 +48,30 @@ class StudentData extends BaseController
 
       $json = file_get_contents('php://input');
       $idata = json_decode($json,true);
-//      print_r($idata['perPage']);return;
+      $array = array();
+     if(strlen($idata['psname'])>0){
+        $array['sname'] = $idata['psname'];
+      }
+      if(strlen($idata['pcourse'])>0){
+        $array['course'] = $idata['pcourse'];
+      }   
+    //  print_r($idata);exit();   
       $data = [
-        'perPage'=>$idata['perPage'],
-        'total' => $model->countAll(),
-        'students' => $model->paginate($idata['perPage'],"g1",$idata['page']),
-        'pager' => $model->pager,
-    ];
+        'perPage'=> $idata['perPage'],
+         'psname'  => $idata['psname'],
+        'pcourse' => $idata['pcourse']
+      ];
+    if(count($array)>0){
+            $data['students'] = $model->like($array)->paginate($idata['perPage'],"g1",$idata['page']);
+            $data['total'] =  $model->like($array)->countAllResults();
+
+    } else {
+            $data['students'] = $model->paginate($idata['perPage'],"g1",$idata['page']);
+            $data['total'] =  $model->countAll();
+
+    }
+ //   print_r($data);
     return view('studentsList',$data);  
+    
     }
 }

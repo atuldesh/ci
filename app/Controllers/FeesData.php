@@ -72,23 +72,22 @@ class FeesData extends BaseController
         $json = file_get_contents('php://input');
         $idata = json_decode($json,true);
         $model = new ReceiptListModel();
+        $cond=array();
         if($idata['repoNo']==1){
-            $data = [
-                'perPage'=>$idata['perPage'],
-                'total' => $model->where('regno', $idata['regNo'])->countAllResults(),
-                'receipts' => $model->where('regno', $idata['regNo'])->paginate($idata['perPage'],"g1",$idata['page']),
-            ];
+            $cond['regno'] = $idata['regNo'];
         } else if($idata['repoNo']==2){
-            $cond = array('fdate >=' => $idata['sdate'], 'fdate <=' => $idata['edate']);
-            $data = [
-                'perPage'=>$idata['perPage'],
-                'total' => $model->where($cond)->countAllResults(),
-                'receipts' => $model->where($cond)->paginate($idata['perPage'],"g1",$idata['page']),
-            ];            
-/*            $st = $model->where($cond)
-            ->orderBy('fdate', 'desc')
-            ->findAll(); */           
-        }    
-        return view('receiptsList',$data);  
+            $cond['fdate >='] = $idata['sdate'];
+            $cond['fdate <='] = $idata['edate'];
+        }
+    //    $data['sum'] = $result['sumQuantities'];
+        $result = $model->where($cond)->select('sum(amount) as totAmt')->first();
+        $data = [
+            'repoNo'=>$idata['repoNo'],
+            'perPage'=>$idata['perPage'],
+            'totAmt' => $result['totAmt'],
+            'total' => $model->where($cond)->countAllResults(),
+            'receipts' => $model->where($cond)->paginate($idata['perPage'],"g1",$idata['page']),
+        ];            
+         return view('receiptsList',$data);  
     }
 }
