@@ -18,6 +18,7 @@ class Instt extends BaseController
         LoggerInterface $logger
     ) {
         parent::initController($request, $response, $logger);
+    //    date_default_timezone_set('Asia/Kolkata');
     }
 
     public function index(int $id=0)

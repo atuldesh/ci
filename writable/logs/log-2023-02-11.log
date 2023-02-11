@@ -1,0 +1,112 @@
+CRITICAL - 2023-02-11 11:48:42 --> syntax error, unexpected token "="
+in APPPATH\Views\studEntry.php on line 49.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('studEntry', [], true)
+ 3 APPPATH\Controllers\Instt.php(49): view('studEntry', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Instt->showPage(1)
+ 5 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Instt))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 14:13:45 --> Call to undefined method App\Models\ReceiptListModel::group_by
+in SYSTEMPATH\Model.php on line 807.
+ 1 APPPATH\Controllers\FeesData.php(84): CodeIgniter\Model->__call('group_by', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 14:14:22 --> Call to undefined method App\Models\ReceiptListModel::group_by
+in SYSTEMPATH\Model.php on line 807.
+ 1 APPPATH\Controllers\FeesData.php(84): CodeIgniter\Model->__call('group_by', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 14:16:24 --> Call to undefined method App\Models\ReceiptListModel::group_by
+in SYSTEMPATH\Model.php on line 807.
+ 1 APPPATH\Controllers\FeesData.php(84): CodeIgniter\Model->__call('group_by', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 14:36:24 --> Call to undefined method App\Models\ReceiptListModel::getResult
+in SYSTEMPATH\Model.php on line 807.
+ 1 APPPATH\Controllers\FeesData.php(84): CodeIgniter\Model->__call('getResult', [])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 14:36:24 --> Call to undefined method App\Models\ReceiptListModel::getResult
+in SYSTEMPATH\Model.php on line 807.
+ 1 APPPATH\Controllers\FeesData.php(84): CodeIgniter\Model->__call('getResult', [])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 14:36:26 --> Call to undefined method App\Models\ReceiptListModel::getResult
+in SYSTEMPATH\Model.php on line 807.
+ 1 APPPATH\Controllers\FeesData.php(84): CodeIgniter\Model->__call('getResult', [])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 14:36:37 --> Call to undefined method App\Models\ReceiptListModel::getResult
+in SYSTEMPATH\Model.php on line 807.
+ 1 APPPATH\Controllers\FeesData.php(84): CodeIgniter\Model->__call('getResult', [])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 15:30:48 --> Undefined variable $repoNo
+in APPPATH\Controllers\FeesData.php on line 90.
+ 1 APPPATH\Controllers\FeesData.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $repoNo', 'APPPATH\\Controllers\\FeesData.php', 90)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 17:37:31 --> Call to undefined method App\Models\ReceiptListModel::distnct
+in SYSTEMPATH\Model.php on line 807.
+ 1 APPPATH\Controllers\FeesData.php(102): CodeIgniter\Model->__call('distnct', [])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 17:38:26 --> Cannot use object of type stdClass as array
+in APPPATH\Views\courseWiseList.php on line 17.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('courseWiseList', [], true)
+ 4 APPPATH\Controllers\FeesData.php(103): view('courseWiseList', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 17:39:57 --> Cannot use object of type stdClass as array
+in APPPATH\Views\courseWiseList.php on line 17.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('courseWiseList', [], true)
+ 4 APPPATH\Controllers\FeesData.php(103): view('courseWiseList', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 17:40:58 --> Cannot use object of type stdClass as array
+in APPPATH\Views\courseWiseList.php on line 17.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('courseWiseList', [], true)
+ 4 APPPATH\Controllers\FeesData.php(103): view('courseWiseList', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-11 17:41:47 --> Cannot use object of type stdClass as array
+in APPPATH\Views\courseWiseList.php on line 17.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('courseWiseList', [], true)
+ 4 APPPATH\Controllers\FeesData.php(103): view('courseWiseList', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

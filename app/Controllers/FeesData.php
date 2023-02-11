@@ -73,21 +73,44 @@ class FeesData extends BaseController
         $idata = json_decode($json,true);
         $model = new ReceiptListModel();
         $cond=array();
+        $offset = ($idata['page']-1) * $idata['perPage'];
         if($idata['repoNo']==1){
             $cond['regno'] = $idata['regNo'];
-        } else if($idata['repoNo']==2){
+        } else if($idata['repoNo']>=2){
             $cond['fdate >='] = $idata['sdate'];
             $cond['fdate <='] = $idata['edate'];
         }
-    //    $data['sum'] = $result['sumQuantities'];
         $result = $model->where($cond)->select('sum(amount) as totAmt')->first();
+
         $data = [
             'repoNo'=>$idata['repoNo'],
-            'perPage'=>$idata['perPage'],
+            'perPage'=>$idata['perPage'],    
             'totAmt' => $result['totAmt'],
-            'total' => $model->where($cond)->countAllResults(),
-            'receipts' => $model->where($cond)->paginate($idata['perPage'],"g1",$idata['page']),
-        ];            
-         return view('receiptsList',$data);  
+        ];    
+
+        if($idata['repoNo']<3){
+            $data['total'] = $model->where($cond)->countAllResults();
+            $data['receipts'] = $model->where($cond)
+            ->paginate($idata['perPage'],"g1",$idata['page']);
+            return view('receiptsList',$data);  
+
+        } else if($idata['repoNo']==3){
+            $res = $model->where($cond)->groupBy('course')
+                    ->select('course')->select('sum(amount) as totAmt')
+                    ->get($idata['perPage'],$offset);
+            $data['receipts'] = $res->getResult();
+            $data['total'] = $model->where($cond)->distinct()->select('course')->countAllResults();
+            return view('courseWiseList',$data);
+        } else if($idata['repoNo']==4){
+            $res = $model->where($cond)->groupBy('fdate')
+                    ->select('fdate')->select('sum(amount) as totAmt')
+                    ->get($idata['perPage'],$offset);
+            $data['receipts'] = $res->getResult();
+            $data['total'] = $model->where($cond)->distinct()->select('fdate')->countAllResults();
+ 
+            return view('dateWiseList',$data);
+
+        }
+//         
     }
 }

@@ -24,6 +24,8 @@
               <?php  if($role=='A'){ ?>
               <li><a class="dropdown-item" href="collectionReport" href="#">Collection Report</a></li>
               <li><a class="dropdown-item" href="courseWise" href="#">Course Wise Collection</a></li>
+              <li><a class="dropdown-item" href="dayWise" href="#">Day Wise Collection</a></li>
+
               <?php } ?>
 
             </ul>

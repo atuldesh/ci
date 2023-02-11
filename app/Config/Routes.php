@@ -59,6 +59,7 @@ $routes->post('delReceipt', 'FeesData::delReceipt');
 $routes->match(['get', 'put','post'],'studLedger','Instt::showPage/3');
 $routes->match(['get', 'put','post'],'collectionReport','Instt::showPage/4');
 $routes->match(['get', 'put','post'],'courseWise','Instt::showPage/5');
+$routes->match(['get', 'put','post'],'dayWise','Instt::showPage/6');
 
 $routes->post('getFeesReport','FeesData::getFeesReport');
 

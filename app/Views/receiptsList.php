@@ -1,5 +1,5 @@
 <?php
-   // print_r($receipts);
+    print_r($receipts);
     $pages = ($total%$perPage>0)?intdiv($total,$perPage)+1 : $total/$perPage;
 ?>
 <div>
@@ -10,7 +10,7 @@
 <?php   if(!(isset($repoNo))) {
             echo "<th>Action</th>"; } 
         else {
-            echo "</tr><tr class='bg-info'><th colspan='4'>Sum</th><th>".$totAmt."</th><th></th>";
+            echo "</tr><tr class='bg-info'><th class='text-end fs-5' colspan='4'>Total</th><th class='fs-5'>".$totAmt."</th><th></th>";
         } ?> 
         </tr>
         <tbody>

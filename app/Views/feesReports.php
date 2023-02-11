@@ -31,13 +31,13 @@
                     <label for="sdate">From :</label>
                 </div>
                 <div class="col-8 col-sm-4 col-md-2 mb-4">
-                    <input type="date" class="form-control" name="sdate" id="sdate" />
+                    <input type="date" class="form-control" value=<?php echo date("Y-m-d");?> name="sdate" id="sdate" />
                 </div>
                 <div class="col-3 col-sm-2 col-md-1 mb-4 ">
                     <label for="edate">To :</label>
                 </div>
                 <div class="col-8 col-sm-4 col-md-2 mb-4">
-                    <input type="date" class="form-control" name="edate" id="edate" />
+                    <input type="date" class="form-control" value=<?php echo date("Y-m-d");?> name="edate" id="edate" />
                 </div>
             <?php
             } ?>
@@ -70,26 +70,18 @@ let regNo =0;
 function showReport(page=1)
 {
     repoNo = <?php echo $repoNo; ?>;
+    idataObj = {
+            'perPage':5,
+            'page':page,
+            'repoNo':repoNo
+    };
     if(repoNo==1){
         st = $('sname').value;
         arr = st.split("-");
-        regNo = arr[0];
-        idataObj = {
-            'perPage':5,
-            'page':page,
-            'repoNo':repoNo,
-            'regNo': regNo
-        };
-    } else {
-        sdate = $('sdate').value;
-        edate = $('edate').value;
-        idataObj = {
-            'perPage':5,
-            'page':page,
-            'repoNo':repoNo,
-            'sdate':sdate,
-            'edate':edate
-        };
+        idataObj['regNo'] = arr[0];
+    } else if(repoNo>=2 ) {
+        idataObj['sdate'] = $('sdate').value;
+        idataObj['edate'] = $('edate').value;
     }
     fetch('getFeesReport',{
         method:'POST',

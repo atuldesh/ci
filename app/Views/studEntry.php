@@ -46,7 +46,7 @@
                 <label for="admDate">Adm. Date</label>
             </div>
             <div class="col-8 col-sm-6 col-md-4">
-                <input type="date" class="form-control" name="admDate" id="admDate" >
+                <input type="date" class="form-control" value=<?php echo date("Y-m-d");?> name="admDate" id="admDate" >
             </div>
         </div>
         <div class="row ">

@@ -36,7 +36,7 @@
                 <label for="fdate">Date</label>
             </div>
             <div class="col-6 col-sm-5 col-md-4">
-                <input class="form-control" type="date" name="fdate" id="fdate" />
+                <input class="form-control" type="date" value=<?php echo date("Y-m-d");?> name="fdate" id="fdate" />
             </div>
         </div>
         <div class="row justify-content-start">

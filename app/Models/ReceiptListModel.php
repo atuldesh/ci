@@ -11,5 +11,6 @@ class ReceiptListModel extends Model
     ];
     protected $primaryKey = 'recno';
     protected $returnType  =  'array';
-}
+
+ }
 ?>
