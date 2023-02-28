@@ -115,7 +115,7 @@ function getRegNo()
         for (let [key, value] of fd) {
             feesObj[key] = value;
         }
-        console.log(feesObj)
+ //       console.log(feesObj)
         fetch('saveReceipt',{
             method: 'POST', // or 'PUT'
             headers: {
@@ -124,13 +124,13 @@ function getRegNo()
             body: JSON.stringify(feesObj),
         }).then(function(response) 
         {return response.text().then(function(text) {
-            alert(text);
+    //        alert(text);
             form.reset();
         })})        
     }
-    function feesList(page=1)
+    function feesList(page=1,opt=0)
     {
-        idataObj = {'perPage':3,'page':page};
+        idataObj = {'perPage':10,'page':page};
         fetch('listReceipts',{
             method:'POST',
             'Content-Type': 'application/json',

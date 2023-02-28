@@ -42,7 +42,7 @@
             <?php
             } ?>
             <div class="col-1">
-                <button type="button" class="btn btn-primary " onclick="showReport(1)">Show</button>
+                <button type="button" class="btn btn-primary " onclick="feesList(1)">Show</button>
             </div>
         </div>
     </form>
@@ -67,11 +67,11 @@
 <script>
 let regNo =0;
 
-function showReport(page=1)
+function feesList(page=1)
 {
     repoNo = <?php echo $repoNo; ?>;
     idataObj = {
-            'perPage':5,
+            'perPage':10,
             'page':page,
             'repoNo':repoNo
     };

@@ -1,0 +1,9 @@
+CRITICAL - 2023-02-13 06:11:28 --> syntax error, unexpected token "<<"
+in APPPATH\Views\studentsList.php on line 71.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('studentsList', [], true)
+ 3 APPPATH\Controllers\StudentData.php(75): view('studentsList', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\StudentData->listStudents()
+ 5 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StudentData))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

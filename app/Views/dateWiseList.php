@@ -21,10 +21,23 @@
         </tbody>
     </table>
 </div>   
-<div id="pgLinks">
+      
+<div class="mx-5" id="pgLinks">
     <?php
-    for($i=1;$i<=$pages;$i++){
-        echo ("<span class='px-5'><a href='#' onclick='feesList(".$i.")'>".$i."</a></span>");
+    $fromPage = max(1,$curPage-10);
+    $toPage = min($fromPage+15,$pages);
+    if($fromPage>1){
+        echo "<span class='px-2'><a href='#' onclick='feesList(".($fromPage-1).",1)'><<</a></span>";
+    }
+    for($i=$fromPage;$i<=$toPage;$i++){
+        if($i==$curPage){
+        echo ("<span class='px-2 '><a href='#' class='text-danger' onclick='feesList(".$i.")'>".$i."</a></span>");
+        } else {
+            echo ("<span class='px-2'><a href='#' onclick='feesList(".$i.",1)'>".$i."</a></span>");            
+        }
+    }
+    if($toPage<$pages){
+        echo "<span class='px-2'><a href='#' onclick='feesList(".($toPage+1).",1)'>>></a></span>";
     }
     ?>
-</div>        
+</div> 

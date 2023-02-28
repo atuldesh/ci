@@ -1,7 +1,29 @@
 <?php
         $pages = ($total%$perPage>0)?intdiv($total,$perPage)+1 : $total/$perPage;
-   
 ?>
+<script>
+    
+    function showPages(curPage,pages)
+    {
+        alert("X");
+        fromPage = Math.floor(curPage/10)+1;
+        toPage = if(fromPage+10<pages?fromPage:pages);
+
+        st="x";
+        if(fromPage>1) {
+            st = st+"<a href='#' onclick='showPages("fromPage-10+","+pages+")'>"+<<+"</a>";
+        }
+        for(i=fromPage;i<=toPage;i++){
+            st=st+"<a href='#' onclick='studList("+i+",1)'>"+i+"</a>";
+        }
+        if(toPage<pages){
+            st = st + "<a href='#' onclick='showPages("fromPage+10+","+pages+")>"+>>+"</a>";
+        }
+        console.log(st);
+        $('pgLinks').innerHTML = st;
+    }
+    </script>
+
 <div>
     <table class="table border boder-2" id="studtbl">
         <thead>
@@ -40,11 +62,24 @@
         </tbody>
     </table>
 </div>   
-<div id="pgLinks">
+<div class="mx-5" id="pgLinks">
     <?php
-    for($i=1;$i<=$pages;$i++){
-        echo ("<span class='px-2'><a href='#' onclick='studList(".$i.",1)'>".$i."</a></span>");
+    $fromPage = max(1,$curPage-10);
+    $toPage = min($fromPage+15,$pages);
+    if($fromPage>1){
+        echo "<span class='px-2'><a href='#' onclick='studList(".($fromPage-1).",1)'><<</a></span>";
     }
-    
+    for($i=$fromPage;$i<=$toPage;$i++){
+        if($i==$curPage){
+        echo ("<span class='px-2 '><a href='#' class='text-danger' onclick='studList(".$i.")'>".$i."</a></span>");
+        } else {
+            echo ("<span class='px-2'><a href='#' onclick='studList(".$i.",1)'>".$i."</a></span>");            
+        }
+    }
+    if($toPage<$pages){
+        echo "<span class='px-2'><a href='#' onclick='studList(".($toPage+1).",1)'>>></a></span>";
+    }
     ?>
-</div>
+</div> 
+
+

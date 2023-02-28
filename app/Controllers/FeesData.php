@@ -21,7 +21,7 @@ class FeesData extends BaseController
         if(intval($data['recno'])==0)
             $st = $model->insert($receipt);
         else
-            $st = $model->update($data['recno'],$data);
+            $st = $model->update($data['recno'],$receipt);
         echo $st;
     }
     public function getReceipt()
@@ -57,6 +57,7 @@ class FeesData extends BaseController
         'perPage'=>$idata['perPage'],
         'total' => $model->countAll(),
         'receipts' => $model->paginate($idata['perPage'],"g1",$idata['page']),
+        'curPage' => $idata['page']
     ];
     return view('receiptsList',$data);  
     }
@@ -86,6 +87,7 @@ class FeesData extends BaseController
             'repoNo'=>$idata['repoNo'],
             'perPage'=>$idata['perPage'],    
             'totAmt' => $result['totAmt'],
+            'curPage' => $idata['page']
         ];    
 
         if($idata['repoNo']<3){

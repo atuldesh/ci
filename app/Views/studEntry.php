@@ -127,7 +127,8 @@
         $('regno').value=data.regno;
         $('sname').value=data.sname;
         $('course').value =data.course;
-        $('fees').value = data.fees;$('admDate').value=data.admDate;
+        $('fees').value = data.fees;
+        $('admDate').value=data.admDate;
         $('bdate').value=data.bdate;
         $('addr').value=data.address;$('phone').value = data.phone;  
         var sel = document.querySelector('#nav-entry-tab');
@@ -163,6 +164,8 @@
         for (let [key, value] of fd) {
             studObj[key] = value;
         }
+        studObj['batch'] = 0;
+        studObj['password']="password";
 //        console.log(studObj)
         fetch('saveStudent',{
             method: 'POST', // or 'PUT'
@@ -172,7 +175,7 @@
             body: JSON.stringify(studObj),
         }).then(function(response) 
         {return response.text().then(function(text) {
-            alert(text);
+        //    alert(text);
             form.reset();
         })})
     }        
@@ -184,7 +187,7 @@
             psname = $('tsname').value.trim() ;
             pcourse = $('tcourse').value.trim() ;
         }
-        idataObj = {'perPage':5,'page':page,'psname':psname,'pcourse':pcourse};
+        idataObj = {'perPage':10,'page':page,'psname':psname,'pcourse':pcourse};
         fetch('listStudents',{
             method:'POST',
             'Content-Type': 'application/json',

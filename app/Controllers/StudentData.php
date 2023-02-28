@@ -59,7 +59,8 @@ class StudentData extends BaseController
       $data = [
         'perPage'=> $idata['perPage'],
          'psname'  => $idata['psname'],
-        'pcourse' => $idata['pcourse']
+        'pcourse' => $idata['pcourse'],
+        'curPage' => $idata['page']
       ];
     if(count($array)>0){
             $data['students'] = $model->like($array)->paginate($idata['perPage'],"g1",$idata['page']);

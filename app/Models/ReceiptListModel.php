@@ -9,7 +9,7 @@ class ReceiptListModel extends Model
     protected $allowedFields = [
          'regno','sname','fdate', 'amount','remark','course'
     ];
-    protected $primaryKey = 'recno';
+ //   protected $primaryKey = 'recno';
     protected $returnType  =  'array';
 
  }
