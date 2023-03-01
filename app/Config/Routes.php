@@ -26,7 +26,7 @@ $routes->post('logout', 'Instt::index/1');
 $routes->get('logout', 'Instt::index/1');
 $routes->post('saveStudent','StudentData::saveStudent');
 $routes->post('listStudents','StudentData::listStudents');
-
+//test if remote github works
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
@@ -64,6 +64,7 @@ $routes->match(['get', 'put','post'],'dayWise','Instt::showPage/6');
 $routes->post('getFeesReport','FeesData::getFeesReport');
 
 /*
+***************** testing ************
  * --------------------------------------------------------------------
  * Additional Routing
  * --------------------------------------------------------------------
