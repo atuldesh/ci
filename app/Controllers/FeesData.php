@@ -59,6 +59,7 @@ class FeesData extends BaseController
         'receipts' => $model->paginate($idata['perPage'],"g1",$idata['page']),
         'curPage' => $idata['page']
     ];
+  //  echo "reached here";return;
     return view('receiptsList',$data);  
     }
     public function getBalance()
