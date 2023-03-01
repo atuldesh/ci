@@ -1,0 +1,12 @@
+div {
+    padding-top: 1ch ;
+}
+label {padding-left :1ch;
+    text-align: right;
+}
+button {
+    margin-right: 1ch;
+}
+input {
+    font-size: 120%;
+}
