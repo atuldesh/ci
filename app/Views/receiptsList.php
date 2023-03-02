@@ -5,7 +5,6 @@
 <div>
     <table class="table" id="feestbl">
         <thead>
-        <thead>
             <tr class="bg-secondary text-white" >
                 <th></th><th></th>
                 <th>
