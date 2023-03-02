@@ -3,7 +3,7 @@
 ?>
 <script>
     
-    function showPages(curPage,pages)
+ /*   function showPages(curPage,pages)
     {
         alert("X");
         fromPage = Math.floor(curPage/10)+1;
@@ -21,7 +21,7 @@
         }
         console.log(st);
         $('pgLinks').innerHTML = st;
-    }
+    } */
     </script>
 
 <div>

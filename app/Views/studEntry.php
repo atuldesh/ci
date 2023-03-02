@@ -196,6 +196,19 @@
         .then(function(response) 
         {return response.text().then(function(text) {
             $('nav-list').innerHTML = text;
+            let tbox;
+            if(searchOpt==1){
+                tbox = $("tsname");
+            //    $("tsname").focus();
+            } else {
+                tbox = $("tcourse");
+            //    $("tcourse").focus();
+            }
+            if(searchOpt>1){
+            let l = (tbox.value).length;
+            tbox.focus();
+            tbox.setSelectionRange(l+1, l+1);
+            }
         })})
 
     }

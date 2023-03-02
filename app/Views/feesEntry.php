@@ -128,9 +128,19 @@ function getRegNo()
             form.reset();
         })})        
     }
-    function feesList(page=1,opt=0)
+    function feesList(page=1,searchOpt=0)
     {
-        idataObj = {'perPage':10,'page':page};
+        psname="";
+        pfdate="";
+        pamount=0;
+        premark="";
+        if(searchOpt>0){
+            psname = $('tsname').value.trim() ;
+            pfdate = $('tfdate').value ;
+            pamount = $('tamount').value.trim();
+            premark = $('tremark').value.trim() ;
+        }
+        idataObj = {'perPage':10,'page':page,'psname':psname,'pfdate':pfdate,'pamount':pamount,'premark':premark};        
         fetch('listReceipts',{
             method:'POST',
             'Content-Type': 'application/json',
@@ -139,6 +149,25 @@ function getRegNo()
         .then(function(response) 
         {return response.text().then(function(text) {
             $('nav-list').innerHTML = text;
+            let tbox;
+            if(searchOpt==1){
+                tbox = $("tsname");
+            //    $("tsname").focus();
+            } else if(searchOpt==2){
+                tbox = $("tfdate");
+            //    $("tcourse").focus();
+            } else if(searchOpt==3){
+                tbox = $("tamount");
+            //    $("tcourse").focus();
+            }else if(searchOpt==4){
+                tbox = $("tremark");
+            //    $("tcourse").focus();
+            }
+            if(searchOpt>0){
+            let l = (tbox.value).length;
+            tbox.focus();
+            tbox.setSelectionRange(l+1, l+1);  
+            }         
         })})
 
     }    

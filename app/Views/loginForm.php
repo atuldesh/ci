@@ -17,7 +17,7 @@
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control" id="pwd" placeholder="password">
-              <label for="password">Enter Password</label>
+              <label for="pwd">Enter Password</label>
             </div>
             <button type="button" class="btn btn-primary mb-3" onclick="chkLogin();">
                 Confirm identity</button>

@@ -53,12 +53,40 @@ class FeesData extends BaseController
       $json = file_get_contents('php://input');
       $idata = json_decode($json,true);
 //      print_r($idata['perPage']);return;
-      $data = [
-        'perPage'=>$idata['perPage'],
-        'total' => $model->countAll(),
-        'receipts' => $model->paginate($idata['perPage'],"g1",$idata['page']),
-        'curPage' => $idata['page']
-    ];
+
+
+$array = array();
+if(strlen($idata['psname'])>0){
+   $array['sname'] = $idata['psname'];
+ }
+ if(strlen($idata['pfdate'])>0){
+   $array['fdate'] = $idata['pfdate'];
+ }   
+ if(strlen($idata['pamount'])>0){
+    $array['amount'] = $idata['pamount'];
+  }   
+  if(strlen($idata['premark'])>0){
+    $array['remark'] = $idata['premark'];
+  }    
+//  print_r($idata);exit();   
+ $data = [
+   'perPage'=> $idata['perPage'],
+   'psname'  => $idata['psname'],
+   'pfdate' => $idata['pfdate'],
+   'pamount' => $idata['pamount'],
+   'premark' => $idata['premark'],
+   'curPage' => $idata['page']
+ ];
+if(count($array)>0){
+       $data['receipts'] = $model->like($array)->paginate($idata['perPage'],"g1",$idata['page']);
+       $data['total'] =  $model->like($array)->countAllResults();
+
+} else {
+       $data['receipts'] = $model->paginate($idata['perPage'],"g1",$idata['page']);
+       $data['total'] =  $model->countAll();
+
+}
+
   //  echo "reached here";return;
     return view('receiptsList',$data);  
     }

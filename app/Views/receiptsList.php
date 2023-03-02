@@ -4,9 +4,28 @@
 ?>
 <div>
     <table class="table" id="feestbl">
-        <tr class="bg-secondary text-white">
-        <th>Rec.No.</th><th>Reg.No.</th><th>Name</th><th>Date</th>
-        <th>Amount</th><th>Remark</th>
+        <thead>
+        <thead>
+            <tr class="bg-secondary text-white" >
+                <th></th><th></th>
+                <th>
+                    <input type="text" id="tsname" oninput="feesList(1,1)" class="form-control w-70" value ='<?php echo(isset($psname) ? $psname : ""); ?>' placeholder="Search Name">
+                </th>
+                <th>
+                    <input type="date" id="tfdate" oninput="feesList(1,2)" class="form-control w-70" placeholder="Search Date" value ='<?php echo(isset($pfdate) ? $pfdate :""); ?>'>
+                </th>
+                 <th>
+                 <input type="number" id="tamount" oninput="feesList(1,3)" class="form-control w-70" placeholder="Search Amount" value ='<?php echo(isset($pamount) ? $pamount :""); ?>'>
+                 </th>
+                 <th>
+                 <input type="text" id="tremark" oninput="feesList(1,4)" class="form-control w-70" placeholder="Search Remark" value ='<?php echo(isset($premark) ? $premark :""); ?>'>
+                 </th>
+                
+            </tr>            
+            <tr class="bg-secondary text-white">
+            <th>Rec.No.</th><th>Reg.No.</th><th>Name</th><th>Date</th>
+            <th>Amount</th><th>Remark</th>
+        </thead>
 <?php   if(!(isset($repoNo))) {
             echo "<th>Action</th>"; } 
         else {

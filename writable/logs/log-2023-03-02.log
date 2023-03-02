@@ -1,0 +1,7 @@
+CRITICAL - 2023-03-02 20:01:28 --> Undefined array key "pfamount"
+in APPPATH\Controllers\FeesData.php on line 66.
+ 1 APPPATH\Controllers\FeesData.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pfamount"', 'APPPATH\\Controllers\\FeesData.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->listReceipts()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
