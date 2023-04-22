@@ -6,7 +6,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\StudentModel;
-
+use App\Models\StudentFeesModel;
 
 class StudentData extends BaseController
 {
@@ -57,7 +57,7 @@ class StudentData extends BaseController
       }   
     //  print_r($idata);exit();   
       $data = [
-        'perPage'=> $idata['perPage'],
+        'perPage'=> PER_PAGE,
          'psname'  => $idata['psname'],
         'pcourse' => $idata['pcourse'],
         'curPage' => $idata['page']
@@ -75,4 +75,26 @@ class StudentData extends BaseController
     return view('studentsList',$data);  
     
     }
-}
+    public function getStudFees()
+    {
+        $json = file_get_contents('php://input');
+        $idata = json_decode($json,true);
+        $model = new StudentFeesModel();
+        $cond=array();
+        $offset = ($idata['page']-1) * PER_PAGE;
+
+        $cond['admDate >='] = $idata['adate'];
+        $cond['paidFees >='] = $idata['lamt'];
+        if( intval($idata['uamt'])>0){
+          $cond['paidFees <='] = $idata['uamt'];
+        }
+        $data = [
+            'perPage'=> PER_PAGE,    
+            'curPage' => $idata['page'],
+            'total' => $model->where($cond)->countAllResults(),
+            'recs' => $model->where($cond)->paginate(PER_PAGE,"g1",$idata['page'],$offset)
+        ];
+        return view('studentWiseFeesList',$data);
+
+        }
+    }    

@@ -60,7 +60,8 @@ $routes->match(['get', 'put','post'],'studLedger','Instt::showPage/3');
 $routes->match(['get', 'put','post'],'collectionReport','Instt::showPage/4');
 $routes->match(['get', 'put','post'],'courseWise','Instt::showPage/5');
 $routes->match(['get', 'put','post'],'dayWise','Instt::showPage/6');
-
+$routes->match(['get', 'put','post'],'studentFees','Instt::showPage/7');
+$routes->post('getStudFees','StudentData::getStudFees');
 $routes->post('getFeesReport','FeesData::getFeesReport');
 
 /*

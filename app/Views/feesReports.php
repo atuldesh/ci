@@ -71,7 +71,7 @@ function feesList(page=1)
 {
     repoNo = <?php echo $repoNo; ?>;
     idataObj = {
-            'perPage':10,
+   //         'perPage':PER_PAGE,
             'page':page,
             'repoNo':repoNo
     };

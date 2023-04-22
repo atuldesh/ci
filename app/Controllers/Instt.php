@@ -41,8 +41,9 @@ class Instt extends BaseController
             $user['role'] = $_SESSION['role'];
         }
         $pages['header'] =  view('header',$user);
+        $pages['footer'] =  view('footer');
         if($pflag==0 || $user['role']=='G'){
-            $pages['main'] =  view('sshow');
+            $pages['main'] =  view('landingPage');
         }else if($pflag==1 && ($user['role'] == 'A' || $user['role']=='F')){
             $st = $this->getCourseList();
             $data['courseList'] = json_encode($st);
@@ -56,6 +57,9 @@ class Instt extends BaseController
             $data['studentsList'] = json_encode($st);
             $data['repoNo'] = $pflag - 2;
             $pages['main'] = view('feesReports',$data);
+        }else if($pflag==7 && ($user['role'] == 'A' || $user['role']=='F')){
+            $pages['main'] = view('studentFeesReport');
+
         }else if($pflag>3 && ($user['role'] == 'A')){
             $data['repoNo'] = $pflag - 2;
             $pages['main'] = view('feesReports',$data);

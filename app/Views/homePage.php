@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Testing my Page</title>
+    <title>Vaikuntha Computers</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> 
-     <link href="public/assets/css/styles.css" rel="stylesheet">
+     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="fs-7 ">
+<body >
 <div class="container-fluid px-0 pt-0">
     <?php echo $header;?>
-    <div class="row">
-      <div id="nav">
-      <?php echo $menu; ?>
+       <div class="mx-3" id="nav">
+       <?php echo $menu; ?>
      </div>
-      <div class="ms-3" id="main">
+      <div class="mx-3" id="main">
         <?php echo $main;?>
+      </div>
+      <div>
+        <?php echo $footer; ?>
       </div> 
-    </div>
-</div>
+  </div>
     <!-- Login Form -->
     <?php echo $loginForm;?>
      
@@ -45,14 +46,15 @@ function chkLogin()
     {return response.text().then(function(text) {console.log(text)})})*/
     }).then(response => response.json())
     .then(data => { 
-        console.log(data);
+//        console.log(data);
         if(data['status']!=0){
             $('msg').innerText="Invalid Login id or Password";
         } else {
             var myModalEl = document.getElementById('loginModal');
             var modal = bootstrap.Modal.getInstance(myModalEl);
-            modal.hide();            
-            st = "Welcome "+ data['uname'];
+            modal.hide();           
+            st='<span class="text-white">Welcome <span id="uname"><?php echo $uname; ?> </span></span>';
+      //      st = "Welcome "+ data['uname'];
             st=st+'<span class="px-2" id="logBtn"><a href="logout" class="btn btn-warning" >LogOut</a></span>';
             $('userFld').innerHTML = st;
             $('nav').innerHTML = data['menu'];

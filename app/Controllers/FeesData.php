@@ -9,6 +9,7 @@ use App\Models\FeesModel;
 use App\Models\RepoModel;
 use App\Models\ReceiptListModel;
 
+
 class FeesData extends BaseController
 {
     public function saveReceipt()
@@ -70,7 +71,7 @@ if(strlen($idata['psname'])>0){
   }    
 //  print_r($idata);exit();   
  $data = [
-   'perPage'=> $idata['perPage'],
+   'perPage'=> PER_PAGE,
    'psname'  => $idata['psname'],
    'pfdate' => $idata['pfdate'],
    'pamount' => $idata['pamount'],
@@ -103,7 +104,7 @@ if(count($array)>0){
         $idata = json_decode($json,true);
         $model = new ReceiptListModel();
         $cond=array();
-        $offset = ($idata['page']-1) * $idata['perPage'];
+        $offset = ($idata['page']-1) * PER_PAGE;
         if($idata['repoNo']==1){
             $cond['regno'] = $idata['regNo'];
         } else if($idata['repoNo']>=2){
@@ -114,7 +115,7 @@ if(count($array)>0){
 
         $data = [
             'repoNo'=>$idata['repoNo'],
-            'perPage'=>$idata['perPage'],    
+            'perPage'=> PER_PAGE,    
             'totAmt' => $result['totAmt'],
             'curPage' => $idata['page']
         ];    
@@ -122,20 +123,20 @@ if(count($array)>0){
         if($idata['repoNo']<3){
             $data['total'] = $model->where($cond)->countAllResults();
             $data['receipts'] = $model->where($cond)
-            ->paginate($idata['perPage'],"g1",$idata['page']);
+            ->paginate(PER_PAGE,"g1",$idata['page']);
             return view('receiptsList',$data);  
 
         } else if($idata['repoNo']==3){
             $res = $model->where($cond)->groupBy('course')
                     ->select('course')->select('sum(amount) as totAmt')
-                    ->get($idata['perPage'],$offset);
+                    ->get(PER_PAGE,$offset);
             $data['receipts'] = $res->getResult();
             $data['total'] = $model->where($cond)->distinct()->select('course')->countAllResults();
             return view('courseWiseList',$data);
         } else if($idata['repoNo']==4){
             $res = $model->where($cond)->groupBy('fdate')
                     ->select('fdate')->select('sum(amount) as totAmt')
-                    ->get($idata['perPage'],$offset);
+                    ->get(PER_PAGE,$offset);
             $data['receipts'] = $res->getResult();
             $data['total'] = $model->where($cond)->distinct()->select('fdate')->countAllResults();
  

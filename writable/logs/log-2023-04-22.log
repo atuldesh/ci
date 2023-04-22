@@ -1,0 +1,35 @@
+CRITICAL - 2023-04-22 08:22:07 --> Undefined array key "perPage"
+in APPPATH\Controllers\StudentData.php on line 92.
+ 1 APPPATH\Controllers\StudentData.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perPage"', 'APPPATH\\Controllers\\StudentData.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\StudentData->getStudFees()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StudentData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-22 08:23:06 --> Undefined array key "perPage"
+in APPPATH\Controllers\StudentData.php on line 95.
+ 1 APPPATH\Controllers\StudentData.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perPage"', 'APPPATH\\Controllers\\StudentData.php', 95)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\StudentData->getStudFees()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StudentData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-22 08:25:33 --> Undefined array key "perPage"
+in APPPATH\Controllers\StudentData.php on line 95.
+ 1 APPPATH\Controllers\StudentData.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perPage"', 'APPPATH\\Controllers\\StudentData.php', 95)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\StudentData->getStudFees()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StudentData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-22 08:26:56 --> Undefined array key "perPage"
+in APPPATH\Controllers\FeesData.php on line 107.
+ 1 APPPATH\Controllers\FeesData.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perPage"', 'APPPATH\\Controllers\\FeesData.php', 107)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-22 08:28:26 --> Undefined array key "perPage"
+in APPPATH\Controllers\FeesData.php on line 126.
+ 1 APPPATH\Controllers\FeesData.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perPage"', 'APPPATH\\Controllers\\FeesData.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\FeesData->getFeesReport()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeesData))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
