@@ -20,11 +20,13 @@
     <div id="headerSection">
         <div class="d-flex align-items-center justify-content-between border border-sucess"
             style="background:repeating-linear-gradient(180deg, var(--primary), transparent 100px);">
-            <span class="d-flex align-items-center" style="color:white">
-      <!--           <img src="" alt="Logo" class="rounded float-left" style="width:5em">  -->
-                <h2 class="mx-3">Vaikuntha <small class="text-light">Computers</small> </h2>
-            </span>
-            <div class="col-3 px-2" id="userFld" style="text-align: right;">
+            <div class="col-5 col-md-5">
+                <span class="d-flex align-items-center" style="color:white">
+        <!--           <img src="" alt="Logo" class="rounded float-left" style="width:5em">  -->
+                    <h2 class="mx-3">Vaikuntha <small class="text-light">Computers</small> </h2>
+                </span>
+            </div>
+            <div class="col-6 col-md-3 mx-2" id="userFld" style="text-align: right;">
                 <span class="text-white">Welcome <span id="uname"><?php echo $uname; ?> </span></span>
                 <?php if($role !=="G" ){ ?>
                 <span class="px-2" id="logBtn">

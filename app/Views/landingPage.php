@@ -1,6 +1,6 @@
 <main>
     <!-- top institue information start -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row d-flex align-items-center ">
             <div class="col-lg-7">
                 <h1 style="color: #3A1078;">Vaikuntha Computers</h1>

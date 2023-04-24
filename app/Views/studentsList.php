@@ -1,85 +1,77 @@
 <?php
         $pages = ($total%$perPage>0)?intdiv($total,$perPage)+1 : $total/$perPage;
 ?>
-<script>
-    
- /*   function showPages(curPage,pages)
-    {
-        alert("X");
-        fromPage = Math.floor(curPage/10)+1;
-        toPage = if(fromPage+10<pages?fromPage:pages);
+<div class="container shadow rounded my-3">
+    <div class="card">
+        <div class="card-header text-muted">
+            <h4>List of Students</h4>
+        </div>
+        <div class="card-body">
+            <span class="card-title">
+                <div class="row g-3 justify-content-center">
+                    <div class="d-none d-md-inline col-lg-1">
+                        <!-- Reg. No.  -->
+                    </div>
+                    <div class="col-6 col-lg-4 form-floating">
+                        <input type="text" class="form-control" id="tsname" name="tsname"
+                        placeholder="Name" oninput="studList(1,1,<?=PER_PAGE;?>)" 
+                        value='<?php echo(isset($psname) ? $psname : ""); ?>'>
+                        <label for="tsname">Name</label>
+                        
+                    </div>
+                    <div class="col-3  col-lg-2 form-floating">
+                        <input type="text" class="form-control" id="tcourse" name="tcourse"
+                            placeholder="Course" oninput="studList(1,2,<?=PER_PAGE;?>)" 
+                            value='<?php echo(isset($pcourse) ? $pcourse : ""); ?>'>
+                        <label for="tcourse">Course</label>
+                    </div>
+                    <div class="col-3  col-lg-2"></div>
+            </span>
+            <div class="container ">
+                <div class="row g-3 my-2 border-bottom border-3 justify-content-center d-none d-lg-flex ">
+                    <div class="d-none d-lg-inline-block col-lg-1 "><h5>Id</h5></div>
+                    <div class=" col-6 col-lg-4 font-weight-bold"><h5>Full Name</h5></div>
+                    <div class="col-3  col-lg-2"><h5>Course</h5></div>            
+                    <div class="col-3  col-lg-2"><h5>Action</h5></div>
+                </div>
+                <?php foreach($students as $student): ?>               
 
-        st="x";
-        if(fromPage>1) {
-            st = st+"<a href='#' onclick='showPages("fromPage-10+","+pages+")'>"+<<+"</a>";
-        }
-        for(i=fromPage;i<=toPage;i++){
-            st=st+"<a href='#' onclick='studList("+i+",1)'>"+i+"</a>";
-        }
-        if(toPage<pages){
-            st = st + "<a href='#' onclick='showPages("fromPage+10+","+pages+")>"+>>+"</a>";
-        }
-        console.log(st);
-        $('pgLinks').innerHTML = st;
-    } */
-    </script>
+                    <div class="row border-bottom border-2 g-3 justify-content-center">
+                        <div class="d-none d-lg-inline-block col-lg-1 border border-2"><?=$student['regno'];?></div>
+                        <div class="col-6  col-lg-4 border border-2"><?=$student['sname'];?></div>
+                        <div class="col-3  col-lg-2 border border-2"><?=$student['course'];?></div>
+                        <div class="col-3  col-lg-2">
+                            <div class="btn-group mb-2" role="group" aria-label="Action">
+                                <button type="button" onclick="delStudent(<?=$student['regno'];?>)" class="btn btn-danger">Del</button>
+                                <button type="button" onclick="editStudent(<?=$student['regno'];?>)" class="btn btn-primary">Edit</button>
+                            </div>
+                        </div>
 
-<div>
-    <table class="table border boder-2" id="studtbl">
-        <thead>
-            <tr class="mb-2" >
-                <th></th>
-                <th>
-                    <input type="text" id="tsname" oninput="studList(1,1)" class="form-control w-70" value ='<?php echo(isset($psname) ? $psname : ""); ?>' placeholder="Search Name">
-                </th>
-                <th>
-                    <input type="text" id="tcourse" oninput="studList(1,2)" class="form-control w-70" placeholder="Search Course" value ='<?php echo(isset($pcourse) ? $pcourse :""); ?>'>
-                </th>
-                 <th></th>
-            </tr>
-            <tr >
-                <th>Reg.No.</th><th>Name</th><th>Course</th><th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php if($students): ?>
-          <?php foreach($students as $student): ?>
-            <tr>
-                <td><?php echo $student['regno']; ?></td>
-                <td><?php echo $student['sname']; ?></td>
-                <td><?php echo $student['course']; ?></td>
-                <td>
-                    <button class='btn btn-primary'
-                     onclick='editStudent(<?php echo $student["regno"]; ?>)'>
-                    Edit</button>
-                    <button class='btn btn-warning'
-                    onclick='delStudent(<?php echo $student["regno"]; ?>)'>
-                    Del</button>
-                </td>
-            </tr>
-          <?php endforeach; ?>
-        <?php endif; ?>
-        </tbody>
-    </table>
-</div>   
-<div class="mx-5" id="pgLinks">
-    <?php
-    $fromPage = max(1,$curPage-10);
-    $toPage = min($fromPage+15,$pages);
-    if($fromPage>1){
-        echo "<span class='px-2'><a href='#' onclick='studList(".($fromPage-1).",1)'><<</a></span>";
-    }
-    for($i=$fromPage;$i<=$toPage;$i++){
-        if($i==$curPage){
-        echo ("<span class='px-2 '><a href='#' class='text-danger' onclick='studList(".$i.")'>".$i."</a></span>");
-        } else {
-            echo ("<span class='px-2'><a href='#' onclick='studList(".$i.",1)'>".$i."</a></span>");            
-        }
-    }
-    if($toPage<$pages){
-        echo "<span class='px-2'><a href='#' onclick='studList(".($toPage+1).",1)'>>></a></span>";
-    }
-    ?>
-</div> 
-
-
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="mx-5 " id="pgLinks ">
+                <?php
+                $fromPage = max(1,$curPage-10);
+                $toPage = min($fromPage+15,$pages);
+             //   echo $fromPage.",".$toPage."\n";
+                if($fromPage>1){
+                    echo "<span class='px-2'><a href='#' onclick='studList(".($fromPage-1).",1,".(PER_PAGE).")'><<</a></span>";
+                }
+                for($i=$fromPage;$i<=$toPage;$i++){
+                    if($i==$curPage){
+                    echo ("<span class='px-2 '><a href='#' class='text-warning fw-bold' onclick='studList(".$i.",1,".(PER_PAGE).")'>".$i."</a></span>");
+                    } else {
+                        echo ("<span class='px-2 '><a href='#' class='text-black' onclick='studList(".$i.",1,".(PER_PAGE).")'>".$i."</a></span>");            
+                    }
+                }
+                if($toPage<$pages){
+                    echo "<span class='px-2 text-white'><a href='#' onclick='studList(".($toPage+1).",1,".(PER_PAGE).")'>>></a></span>";
+                }
+                ?>
+            </div>         
+        </div>        
+    </div> 
+</div>

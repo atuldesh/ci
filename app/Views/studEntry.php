@@ -7,75 +7,65 @@
 </nav>       
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-entry" role="tabpanel" aria-labelledby="nav-entry-tab" tabindex="0">
-        <form id="studEntryForm">
-        <div class="row justify-content-start">
-            <div class="col-3 col-sm-2 ">
-                <label for="regno">Reg. No.</label>
-            </div>
-            <div class="col-8 col-sm-6 col-md-4">
-                <input type="number" class="form-control" name="regno" id="regno" value="0" readonly />
-            </div>
-        </div>
-        <div class="row justify-content-start">
-            <div class="col-3 col-sm-2  ">
-                <label for="sname">Name:</label>
-            </div>
-            <div class="col-8 col-sm-6 col-md-4">
-                <input type="text" class="form-control" name="sname" id="sname" />
+        <div class="container">
+        <form id="studEntryForm" >
+        <div class="row justify-content-start mt-1">
+           <div class="col-6  col-md-3 form-floating">
+                <input type="number" class="form-control" name="regno" aria-label="Reg.No."
+                 placeholder="Reg.No." id="regno" value="0" readonly />
+                <label for="regno" class="px-3">Reg.No.</label>               
             </div>
         </div>
-        <div class="row justify-content-start">
-            <div class="col-3 col-sm-2">
-                <label for="course">course</label>
+        <div class="row justify-content-start mt-1">
+            <div class="col-12  col-md-6 form-floating">
+                <input type="text" class="form-control" name="sname" id="sname" 
+                aria-label="Student Name" placeholder="Student Name"  />
+                <label for="sname" class="px-3">Student Name</label>               
+
             </div>
-            <div class="col-8 col-sm-6 col-md-4">
-                <input list="courses" class="form-control" name="course" id="course" onblur="getCourseFees()">
+        </div>
+        <div class="row justify-content-start mt-1">
+             <div class="col-12  col-md-6 form-floating">
+                <input list="courses" class="form-control" name="course" id="course"
+                aria-label="Course" placeholder="Course" onblur="getCourseFees()">
+                <label for="course" class="px-3">Course</label> 
                 <span id="clist"></span>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-3 col-sm-2 ">
-                <label  for="fees">Fees</label>
+        <div class="row mt-1">
+            <div class="col-6 col-md-3 form-floating">
+                <input type="number" class="form-control" name="fees" id="fees"
+                aria-label="fees" placeholder="fees">
+                <label  for="fees" class="px-3">Fees</label>
             </div>
-            <div class="col-8 col-sm-6 col-md-4">
-                <input type="number" class="form-control" name="fees" id="fees">
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-3 col-sm-2 ">
-                <label for="admDate">Adm. Date</label>
-            </div>
-            <div class="col-8 col-sm-6 col-md-4">
-                <input type="date" class="form-control" value=<?php echo date("Y-m-d");?> name="admDate" id="admDate" >
+            <div class="col-6 col-md-3 form-floating">
+                <input type="date" class="form-control" value=<?php echo date("Y-m-d");?>
+                 name="admDate" id="admDate" aria-label="Adm. Date" placeholder="Adm. Date" >
+                <label for="admDate" class="px-3">Adm. Date</label>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-3 col-sm-2 ">
-                <label  for="bdate">B. Date</label>
+        <div class="row mt-1 ">
+            <div class="col-6 col-md-3 form-floating">
+                <input type="date" class="form-control" name="bdate" id="bdate"
+                aria-label="B. Date" placeholder="B. Date">
+                <label  for="bdate" class="px-3">B. Date</label>
             </div>
-            <div class="col-8 col-sm-6 col-md-4">
-                <input type="date" class="form-control" name="bdate" id="bdate">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 col-sm-2 ">
-                <label for="addr">Address</label>
-            </div>
-            <div class="col-8 col-sm-6 col-md-4">
-                <input type="text" class="form-control" name="address" id="addr" />
+            <div class="col-6 col-md-3 form-floating">
+                <input type="phone" class="form-control" name="phone" id="phone" 
+                aria-label="Phone" placeholder="Phone"/>
+                <label for="phone" class="px-3">Phone</label>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3 col-sm-2">
-                <label for="phone">Phone</label>
+        <div class="row mt-1">
+            <div class="col-12  col-md-6 form-floating" >
+                <input type="text" class="form-control" name="address" id="addr" 
+                aria-label="Address" placeholder="Address"/>
+                <label  for="addr" class="px-3">Address</label>
             </div>
-            <div class="col-8 col-sm-6 col-md-4">
-                <input type="phone" class="form-control" name="phone" id="phone" />
-            </div>
-        </div>   
-        <div class="row">
-            <div class="col-3 col-sm-2 "></div>
-            <div class="col-8 col-sm-6 col-md-4">
+        </div>
+
+        <div class="row mt-3 ">
+            <div class="col-12 col-md-6">
                 <div class="btn-group" role="group" >
                     <button type="button" class="btn btn-primary" onclick="saveStudent()">Save</button>
                     <button type="reset" class="btn btn-warning" >Clear</button>
@@ -83,6 +73,7 @@
             </div>
         </div>  
         </form>
+</div>
     </div>
     <div class="tab-pane fade " id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab" tabindex="0"> 
     </div>
@@ -179,7 +170,7 @@
             form.reset();
         })})
     }        
-    function studList(page=1, searchOpt=0)
+    function studList(page=1, searchOpt=0,perPage=25)
     {
         psname="";
         pcourse="";
@@ -187,7 +178,8 @@
             psname = $('tsname').value.trim() ;
             pcourse = $('tcourse').value.trim() ;
         }
-        idataObj = {'perPage':10,'page':page,'psname':psname,'pcourse':pcourse};
+        idataObj = {'perPage':25,'page':page,'psname':psname,'pcourse':pcourse};
+ //       console.log(idataObj);
         fetch('listStudents',{
             method:'POST',
             'Content-Type': 'application/json',
@@ -204,7 +196,7 @@
                 tbox = $("tcourse");
             //    $("tcourse").focus();
             }
-            if(searchOpt>1){
+            if(searchOpt>=1){
             let l = (tbox.value).length;
             tbox.focus();
             tbox.setSelectionRange(l+1, l+1);
