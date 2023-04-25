@@ -1,6 +1,6 @@
 <main>
     <!-- top institue information start -->
-    <div class="container-fluid">
+    <div class="container">
         <div class="row d-flex align-items-center ">
             <div class="col-lg-7">
                 <h1 style="color: #3A1078;">Vaikuntha Computers</h1>
@@ -13,9 +13,14 @@
     <!--            <button type="button" class="btn mainbtn">Read More</button>   -->
             </div>
             <div class="col-5 d-none d-lg-block">
-                <span>
-                    <img src="assets/images/page-2.png" alt="institute" class="rounded" style="width:80%; float:right;">
-                </span>
+                <div class=" creative" style="width:100%">
+                            <p class="creat1">Learning</p>
+                            <p class="creat2">Skill</p>
+                            <p class="creat3">Creative</p>
+                            <p class="creat4" style="letter-spacing:1rem;">Knowledge</p>
+                            <p class="creat5" style="letter-spacing:0.6rem;">Devloper</p>
+                            
+                        </div>             
             </div>
         </div>
     </div>

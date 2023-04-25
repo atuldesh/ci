@@ -16,7 +16,7 @@
         </div>
     </div>
 </div>  -->
-<header class="sticky-top">
+
     <div id="headerSection">
         <div class="d-flex align-items-center justify-content-between border border-sucess"
             style="background:repeating-linear-gradient(180deg, var(--primary), transparent 100px);">
@@ -40,6 +40,6 @@
             </div>
         </div>
     </div>
-</header>
+
 
 

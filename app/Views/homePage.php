@@ -12,10 +12,12 @@
 </head>
 <body >
 <div class="container-fluid px-0 pt-0">
+<header class="sticky-top">
     <?php echo $header;?>
-       <div class="mx-3" id="nav">
+       <div id="nav">
        <?php echo $menu; ?>
      </div>
+</header>
       <div class="mx-3" id="main">
         <?php echo $main;?>
       </div>

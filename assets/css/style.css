@@ -1,38 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Alkatra&family=Poppins&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Merienda&family=Over+the+Rainbow&family=Patrick+Hand+SC&family=Sedgwick+Ave+Display&display=swap');
+
+/* font-family: 'Crafty Girls', cursive;
+font-family: 'Merienda', cursive;
+font-family: 'Over the Rainbow', cursive;
+font-family: 'Patrick Hand SC', cursive;
+font-family: 'Sedgwick Ave Display', cursive; */
 
 :root {
-    --primary:#3A1078;
-    --white: #ffffff; 
-    --black:#000000;
-    --secondary:#3795BD;
+    --primary: #3A1078;
+    --white: #ffffff;
+    --black: #000000;
+    --secondary: #3795BD;
 
-  }
-html{
+}
+
+html {
     font-size: 16px;
 }
+
 body {
     margin: 0;
     padding: 0;
 }
-h1{
+
+h1 {
     font-size: 2.5rem;
     font-family: 'Aboreto', cursive;
-    font-weight:700;
+    font-weight: 700;
     line-height: 4rem;
 }
-h2{
+
+h2 {
     font-size: 2rem;
     font-family: 'verdana';
-    font-weight:700;
+    font-weight: 700;
 }
-p{
+
+p {
     font-size: 1.5rem;
     font-family: 'Lucida Sans';
     color: var(--secondary);
 }
-.mainbtn{
+
+.mainbtn {
     font-family: poppins;
-    background-color:var(--primary);
+    background-color: var(--primary);
     border: none;
     color: white;
     padding: 10px 30px;
@@ -43,32 +56,76 @@ p{
     margin: 4px 2px;
     cursor: pointer;
 }
-.mainbtn:hover{
-    color:var(--primary);
-    border:1px solid var(--secondary);
+
+.mainbtn:hover {
+    color: var(--primary);
+    border: 1px solid var(--secondary);
 }
 
+.creative {
+    height: 20rem;
+    background: linear-gradient(90deg, rgba(3, 17, 83, 1) 35%, rgba(67, 15, 148, 1) 62%, rgba(100, 4, 103, 1) 100%);
+}
+
+.creative>p {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 3.8rem;
+    letter-spacing: 2px;
+}
+
+.creat1 {
+    transform: matrix(1, -0.3, 1, 1, 20, 25);
+    font-family: 'Crafty Girls', cursive;
+}
+
+.creat2 {
+    transform: matrix(1, 0, 0, 1, 70, 100);
+    font-family: 'Merienda', cursive;
+}
+
+.creat3 {
+    transform: matrix(1, -0.2, 0, 1, 120, 150);
+    font-family: 'Over the Rainbow', cursive;
+}
+
+.creat4 {
+    transform: matrix(1, 0, 0, 1, 25, 226);
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+.creat5 {
+    transform: matrix(1, 0.2, 0.2, 1, 330, 30);
+    font-family: 'Sedgwick Ave Display', cursive;
+    writing-mode: vertical-rl;
+}
 
 /* flip card  */
-.card-wrapper{
+.card-wrapper {
     height: 10rem;
-    width:20rem;
+    width: 20rem;
     perspective: 100rem;
-    margin:auto;
+    margin: auto;
 }
-.content{
+
+.content {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
-    transform-style:preserve-3d;
+    transform-style: preserve-3d;
 }
-.card-wrapper:hover .content{
+
+.card-wrapper:hover .content {
     transform: rotateY(180deg);
-    transition:1s ;
+    transition: 1s;
 }
-.face-front, .face-back{
+
+.face-front,
+.face-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -78,7 +135,8 @@ p{
     -webkit-backface-visibility: hidden;
 
 }
-.face-back{
+
+.face-back {
     transform: rotateY(180deg);
 }
 
