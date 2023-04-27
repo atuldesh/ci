@@ -40,6 +40,20 @@ class StudentData extends BaseController
             echo "Deleted";
 
     }
+    public function updateStudRegStatus()
+    {
+      $json = file_get_contents('php://input');
+      $data = json_decode($json,true);
+  //    print_r($data);return;
+      $model = new StudentModel();
+      if(count($data['on'])>0){
+        $model->whereIn('regno',$data['on'])->set(['registered'=>1])->update();
+      }
+      if(count($data['off'])>0){
+        $model->whereIn('regno',$data['off'])->set(['registered'=>0])->update();
+      }
+      echo "Updated";
+    }
     public function listStudents()
     {
 
@@ -48,33 +62,22 @@ class StudentData extends BaseController
 
       $json = file_get_contents('php://input');
       $idata = json_decode($json,true);
-      $array = array();
-     if(strlen($idata['psname'])>0){
-        $array['sname'] = $idata['psname'];
-      }
-      if(strlen($idata['pcourse'])>0){
-        $array['course'] = $idata['pcourse'];
-      }   
+
     //  print_r($idata);exit();   
       $data = [
         'perPage'=> PER_PAGE,
          'psname'  => $idata['psname'],
         'pcourse' => $idata['pcourse'],
+        'padmDate' => $idata['padmDate'],
+        'pregistered' => $idata['pregistered'],
         'curPage' => $idata['page']
       ];
-    if(count($array)>0){
-            $data['students'] = $model->like($array)->paginate($idata['perPage'],"g1",$idata['page']);
-            $data['total'] =  $model->like($array)->countAllResults();
-
-    } else {
-            $data['students'] = $model->paginate($idata['perPage'],"g1",$idata['page']);
-            $data['total'] =  $model->countAll();
-
+      $result = $model->getResult($idata);
+      $data['students'] = $result['rows'];
+      $data['total'] =  $result['count'];
+      return view('studentsList',$data);  
     }
- //   print_r($data);
-    return view('studentsList',$data);  
-    
-    }
+ 
     public function getStudFees()
     {
         $json = file_get_contents('php://input');

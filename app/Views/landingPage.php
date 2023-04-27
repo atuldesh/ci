@@ -13,7 +13,7 @@
     <!--            <button type="button" class="btn mainbtn">Read More</button>   -->
             </div>
             <div class="col-5 d-none d-lg-block">
-                <div class=" creative" style="width:100%">
+                <div class=" creative" style="width:93%">
                             <p class="creat1">Learning</p>
                             <p class="creat2">Skill</p>
                             <p class="creat3">Creative</p>

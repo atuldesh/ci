@@ -1,0 +1,16 @@
+CRITICAL - 2023-04-27 10:57:30 --> Cannot use object of type stdClass as array
+in APPPATH\Views\studentsList.php on line 70.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('studentsList', [], true)
+ 4 APPPATH\Controllers\StudentData.php(64): view('studentsList', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\StudentData->listStudents()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StudentData))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-27 11:25:56 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\StudentData.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\StudentData->updateStudRegStatus()
+ 2 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StudentData))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

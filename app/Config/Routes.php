@@ -50,6 +50,8 @@ $routes->match(['get', 'put','post'],'feesEntry','Instt::showPage/2');
 $routes->match(['get', 'put','post'],'home','Instt::index');
 $routes->post('getStudent', 'StudentData::getStudent');
 $routes->post('delStudent', 'StudentData::delStudent');
+$routes->post('updateStudRegStatus', 'StudentData::updateStudRegStatus');
+
 $routes->post('getBalance', 'FeesData::getBalance');
 $routes->post('saveReceipt', 'FeesData::saveReceipt');
 $routes->post('listReceipts', 'FeesData::listReceipts');

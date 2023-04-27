@@ -82,6 +82,7 @@
 <script>
     coursesStr = <?php print_r($courseList);?>;
     st = "";
+    let regStatus = new Set(); // To keep track of change in `Registered` Status in students list.
     if(coursesStr!=null)
     {
         st = '<datalist id="courses">';
@@ -92,6 +93,7 @@
          st=st+"</datalist>";
     }
     clist.innerHTML=st;
+    //-------------------------------------------------------------
     function getCourseFees()
     {
         let vcourse = $('course').value ;
@@ -101,6 +103,38 @@
             }
         });
     }
+    //-------------------------------------------------------------
+    function changeRegStatus(vregno)
+    {
+        regStatus.add(vregno);
+    }
+    //-------------------------------------------------------------
+    function updateRegStatus()
+    {
+        console.log(regStatus);
+        onArr=[];offArr=[];
+        regStatus.forEach(function(rno){
+            if($('c'+rno).checked){
+                onArr.push(rno);
+            } else {
+                offArr.push(rno);
+            }
+
+ /*           item = {"regno":rno,'registered':($('c'+rno).checked)?1:0};
+            arr.push(item);*/
+        });
+        obj = {'on':onArr,'off':offArr};
+ //       console.log(obj);console.log(JSON.stringify(obj));
+        fetch('updateStudRegStatus',{
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+        }).then(function(response) 
+        {return response.text().then(function(text) {alert(text)})}) 
+    }
+//-------------------------------------------------------------
     function editStudent(pregno)
     {
         let obj = {"regno":pregno};
@@ -126,6 +160,7 @@
         bootstrap.Tab.getOrCreateInstance(sel).show();
         });
     }
+//-------------------------------------------------------------
     function delStudent(pregno)
     {
         let obj = {"regno":pregno};
@@ -144,7 +179,7 @@
 
         })})     
     }        
-    
+ //-------------------------------------------------------------   
     function saveStudent()
     {
         form = $("studEntryForm");
@@ -169,17 +204,29 @@
         //    alert(text);
             form.reset();
         })})
-    }        
+    }      
+//-------------------------------------------------------------  
     function studList(page=1, searchOpt=0,perPage=25)
     {
         psname="";
         pcourse="";
+        padmDate="";
+        pregistered=2;  // Will display both registered and non registered 
+        regStatus.clear(); // remove all elements from the array regStatus
         if(searchOpt>0){
             psname = $('tsname').value.trim() ;
             pcourse = $('tcourse').value.trim() ;
+            padmDate = $('tadmDate').value;
+            if($('tAll').checked){
+                pregistered = 2;
+            }else{
+                pregistered = ($('tregistered').checked)?1:0;
+            }
+            
         }
-        idataObj = {'perPage':25,'page':page,'psname':psname,'pcourse':pcourse};
- //       console.log(idataObj);
+        idataObj = {'perPage':25,'page':page,'psname':psname,'pcourse':pcourse,
+            'padmDate':padmDate,'pregistered':pregistered};
+//        console.log(idataObj);
         fetch('listStudents',{
             method:'POST',
             'Content-Type': 'application/json',
@@ -191,14 +238,13 @@
             let tbox;
             if(searchOpt==1){
                 tbox = $("tsname");
-            //    $("tsname").focus();
-            } else {
+                tbox.focus();
+            } else if(searchOpt==2) {
                 tbox = $("tcourse");
-            //    $("tcourse").focus();
+                tbox.focus();
             }
-            if(searchOpt>=1){
+            if(searchOpt==1 || searchOpt==2){
             let l = (tbox.value).length;
-            tbox.focus();
             tbox.setSelectionRange(l+1, l+1);
             }
         })})
