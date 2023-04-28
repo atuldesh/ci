@@ -19,19 +19,19 @@
                         <label for="tsname">Name</label>
                         
                     </div>
-                    <div class="col-2  col-lg-1 form-floating">
+                    <div class="col-6  col-lg-1 form-floating">
                         <input type="text" class="form-control" id="tcourse" name="tcourse"
                             placeholder="Course" oninput="studList(1,2,<?=PER_PAGE;?>)" 
                             value='<?php echo(isset($pcourse) ? $pcourse : ""); ?>'>
                         <label for="tcourse">Course</label>
                     </div>
-                    <div class="col-2  col-lg-2 form-floating">
+                    <div class="col-6  col-lg-2 form-floating">
                         <input type="date" class="form-control" id="tadmDate" name="tadmDate"
                             placeholder="AdmDate" onblur="studList(1,3,<?=PER_PAGE;?>)" 
                             value='<?php echo(isset($padmDate) ? $padmDate : ""); ?>'>
                         <label for="tadmDate">A.Date</label>
                     </div>
-                    <div class="col-2  col-lg-1 form-check ">
+                    <div class="col-3  col-lg-1 form-check ">
                         <div>
                             <input class="form-check-input border border-primary" type="checkbox" id="tregistered" name="tregistered"
                                 placeholder="registered" onchange="studList(1,4,<?=PER_PAGE;?>)" 
@@ -45,7 +45,7 @@
                             <label for="tall">All</label>
                         </div>                        
                     </div>
-                    <div class="col-3  col-lg-2 py-2">
+                    <div class="col-4  col-lg-2 py-2">
                         <button class="btn btn-warning" onclick="updateRegStatus()">Update</button>
                     </div>
             </span>
