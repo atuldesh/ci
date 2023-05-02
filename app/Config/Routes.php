@@ -48,6 +48,8 @@ $routes->post('/', 'Instt::index');
 $routes->match(['get', 'put','post'],'studEntry','Instt::showPage/1');
 $routes->match(['get', 'put','post'],'feesEntry','Instt::showPage/2');
 $routes->match(['get', 'put','post'],'home','Instt::index');
+$routes->match(['get', 'put','post'],'program','Instt::showPage/8');
+$routes->post('getPrograms', 'Programs::getPrograms');
 $routes->post('getStudent', 'StudentData::getStudent');
 $routes->post('delStudent', 'StudentData::delStudent');
 $routes->post('updateStudRegStatus', 'StudentData::updateStudRegStatus');

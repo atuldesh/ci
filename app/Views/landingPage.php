@@ -120,7 +120,7 @@
                         </div>
                         <div class="face-back card">
                             <div class="card-body">
-                                <p class="card-text">Click Here to practice various Programming Question</p>
+                                <p class="card-text"><a href="program">Click Here to practice various Programming Question </a></p>
                             </div>
                         </div>
                     </div>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> 
      <link rel="stylesheet" href="assets/css/style.css">
+     
 </head>
 <body >
 <div class="container-fluid px-0 pt-0">

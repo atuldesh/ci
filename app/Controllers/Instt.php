@@ -60,6 +60,9 @@ class Instt extends BaseController
         }else if($pflag==7 && ($user['role'] == 'A' || $user['role']=='F')){
             $pages['main'] = view('studentFeesReport');
 
+        }else if($pflag==8){
+            $pages['main']= view('progQuestion');  
+        
         }else if($pflag>3 && ($user['role'] == 'A')){
             $data['repoNo'] = $pflag - 2;
             $pages['main'] = view('feesReports',$data);
