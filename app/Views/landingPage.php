@@ -1,8 +1,8 @@
 <main>
     <!-- top institue information start -->
-    <div class="container">
+    <div class="container my-3">
         <div class="row d-flex align-items-center ">
-            <div class="col-lg-7">
+            <div class="col-lg-7 order-2 order-lg-1">
                 <h1 style="color: #3A1078;">Vaikuntha Computers</h1>
                 <p>is imparting quality Software Education since 1991.<br>
                 We are proud to guide thousands of young people to learn, get skilled and have great career. 
@@ -12,15 +12,18 @@
                 </p>
     <!--            <button type="button" class="btn mainbtn">Read More</button>   -->
             </div>
-            <div class="col-5 d-none d-lg-block">
-                <div class=" creative" style="width:93%">
+            <div class="col-lg-5 order-1 order-lg-2">
+                <div>
+                <img src="assets/images/5.jpg" class="img-fluid d-flex mx-auto" alt="">
+                </div>
+                <!-- <div class=" creative" style="width:93%">
                             <p class="creat1">Learning</p>
                             <p class="creat2">Skill</p>
                             <p class="creat3">Creative</p>
                             <p class="creat4" style="letter-spacing:1rem;">Knowledge</p>
                             <p class="creat5" style="letter-spacing:0.6rem;">Devloper</p>
                             
-                        </div>             
+                        </div>              -->
             </div>
         </div>
     </div>
